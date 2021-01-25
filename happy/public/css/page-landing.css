@@ -1,0 +1,104 @@
+#page-landing{
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%) /*cor do fundo da pagina index em degrade 349.54 graus de #29b6d1 a 00c7c7 */
+    no-repeat/*para não repetir 2 blocos de cor na pagina*/; 
+    text-align: center;
+    min-height: 100vh;
+    display:flex;
+}
+
+#container {
+    margin: auto;
+    width: min(90%, 112rem); /* função para a tela principal ficar flexivel, vai ficar em 90% até chegar no limite minimo*/
+
+}
+
+.location, h1, .visit p{
+    height: 16vh;
+
+}
+
+.visit a { /*formando o quadrado do "botao " de visita*/
+    width: 8rem;
+    height: 8rem;
+    background: #ffd666;
+    border: none;
+    border-radius: 3rem;
+    display:flex;
+    align-items: center; /*alinhamento de cima para baixo*/
+    justify-content: center; /*alinhamento de um lado para o outro*/
+    margin:auto; /*para ficar no centro */
+    transition: background 200ms;
+}
+
+.visit a:hover {
+    background: #96feff;
+
+}
+
+/*ANIMAÇÕES*/
+/*1- fazendo cada elemento da pagina aparecer um de cada vez*/
+#logo{
+    animation-delay: 50ms;
+}
+
+.location{
+    animation-delay: 100ms;
+}
+
+main h1{
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.4rem);/*formula 3 valores min, quero, max*/
+}
+
+.visit p{
+    animation-delay: 200ms;
+}
+
+.visit a{
+    animation-delay: 250ms;
+}
+/*1- ultimo elemento aparecendo na página*/
+
+/*VERSÃO PARA DESKTOP | DESKTOP VERSION*/
+
+@media(min-width: 760px){
+    #container{
+        padding: 5rem 2rem;
+        /*shorthand background: img repeat position / size*/
+        background: url("../images/bg.svg") no-repeat 70% / clamp(30rem, 54vw,56rem);
+    }
+
+    header{
+        display:flex;  
+        align-items: center;
+        justify-content: space-between; /* propriedade somente disponivel com display flex e com grid*/
+    }
+    .location, h1, .visit p{
+        height: initial;
+        text-align: initial;
+    }
+    .location{
+        text-align: right;
+        font-size: 2.4rem;
+        line-height: 1.5;
+    }
+    main h1{
+        font-weight:bold;
+        line-height: .88;
+        margin:clamp(10%, 9vh, 12%) 0 4rem;
+        width:min(300px, 80%);   
+    }
+    .visit{
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+    }
+    .visit p{
+        font-size: 2.4rem;
+        line-height: 1.5;
+        width:clamp(20rem, 20vw, 30rem);
+    }
+    .visit a {
+        margin:initial;
+    }
+}
